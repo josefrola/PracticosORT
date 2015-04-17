@@ -1,7 +1,16 @@
 
-
+/*---------------llamada de funciones -------------------------*/
 $(document).ready(LoadFunction);
 
+
+/*------------------------------variables glovales ---------------------------------*/
+
+var contador=0;
+var acumulador1=0;
+var acumulador2=0;
+var acumulador3=0;
+
+/*-------------------------------------fin de las variables glovales --------------*/
 
 function LoadFunction() {
     $('#btnData').click(MostrarData);
@@ -9,6 +18,10 @@ function LoadFunction() {
     $('#btnShowNum').click(FunctionEjer3);
     $('#btnShowDataEje4').click(FunctionEjer4);
     $('#btnClaculate').click(Ejericio5);
+    $('#btnShowResult').click(Ejericio6);
+    $('#btnEjericio7').click(Ejericio7);
+    $('#btnEjericio8').click(Ejercicio8);
+    $('#btnCalculate').click(Ejericio9);
 }
 
 
@@ -72,6 +85,42 @@ function Ejericio6(){
     var number=parseInt($('#txtNumberEj6'));
     
     if((number > 10) && (number < 20)){
-        
+        alert('Es mayor que 10 y menor que 20');
+    }else{
+        alert('No es mayor que 10 ni menor a 20');
     }
 }
+
+function Ejericio7(){
+    var numero=(parseInt($('#txtNumberEj7').val()));
+    var total=numero % 7;
+    var total1=numero % 3;
+    
+    if((total===0)&&(total1===0)){
+        alert('Los números ingresados son multiplos de 7 y 3');
+    }else{
+        alert('Los Números ingresados nos son multiplos de 7 y 3');
+    }
+}
+
+function Ejercicio8(){
+    var numero=(parseInt($('#txtNumberEj8').val()));
+    var negativo= -20;
+    var positivo= 20;
+   
+    if((numero < negativo)||(numero > positivo)){
+        alert('Cumple');
+    }else{
+        alert('No Cumple');
+    }
+}
+
+function Ejericio9(){
+    var numero=(parseInt($('#txtNumber_1Ejp9').val()));
+    var total=0;
+    total=numero*5;
+    console.log(total);
+    
+}
+
+
