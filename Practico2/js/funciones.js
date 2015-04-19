@@ -22,6 +22,11 @@ function LoadFunction() {
     $('#btnEjericio7').click(Ejericio7);
     $('#btnEjericio8').click(Ejercicio8);
     $('#btnCalculate').click(Ejericio9);
+    $('#btnMostrar').click(Ejericio10);
+    $('#btnCalcularEjer11').click(Ejercicio11);
+    $('#btnEje12Calcular').click(Ejericio12);
+    $('#btnCalcularEje13').click(Ejericio13);
+    
 }
 
 
@@ -121,6 +126,97 @@ function Ejericio9(){
     total=numero*5;
     console.log(total);
     
+}
+
+function Ejericio10(){
+    var numero=(parseInt($('#txtnumero').val()));
+    
+    if(numero > 30){
+        alert('Número es mayor que 30');
+    }else if(numero < 10){
+        alert('Número menor que 10');
+    }else{
+        alert('Numero esta entre 10 y 30');
+    }
+}
+
+function Ejercicio11(){
+    var minAzucar=1;
+    var minHarina=100;
+    var minAceite=1;
+    var minAgua=1;
+    
+    var Azucar=(parseInt($('#txtazucar').val()));
+    var Harina=(parseInt($('#txtharina').val()));
+    var Aceite=(parseInt($('#txtaceite').val()));
+    var Agua=(parseInt($('#txtagua').val()));
+    
+    var canMinima=Number.MAX_VALUE;
+    
+    var gAzucar=Azucar / minAzucar;
+    var gHarina=Harina / minHarina;
+    var gAceite=Aceite / minAceite;
+    var gAgua=Agua / minAgua;
+    
+    if(gAzucar < canMinima)canMinima=gAzucar;
+    if(gHarina < canMinima)canMinima=gHarina;
+    if(gAceite < canMinima)canMinima=gAceite;
+    if(gAgua < canMinima)canMinima=gAgua;
+    
+    $('#mensaje').html('La cantidad minima es :'+ canMinima);
+}
+
+function Ejericio12(){
+    var valorcasa =parseInt($('#txtprecioCasa').val());
+    var ingreso=parseInt($('#txtingresocomprador').val());
+    var porsentajePaga=0;
+    var restoPagar=0;
+    var cuotas;   
+    var messageporsentaje="";
+    var message="";
+    
+    if(ingreso < 20000){
+        porsentajePaga=valorcasa * 0.15;
+        restoPagar=valorcasa - porsentajePaga;
+        cuotas=restoPagar / 2;
+        messageporsentaje="Debe pagar el 15% del valor de l casa que es:" + porsentajePaga ;
+        message="El resto a pagar son dos cuotas de:" + cuotas;
+    }else if(ingreso >= 20000){
+        var mesesAno=12;
+        var totalmeses=0;
+       porsentajePaga= valorcasa * 0.30;
+       restoPagar=valorcasa - porsentajePaga;
+       totalmeses=mesesAno * 7;
+       cuotas=restoPagar / totalmeses;
+       messageporsentaje="Debe pagar el 30% del valor de l casa que es:" + porsentajePaga;
+       message="El resto a pagar son "+ totalmeses +" cuotas de:" + cuotas;
+    }
+    
+    $('#porsentajepago').html(messageporsentaje);
+    $('#coutasPagar').html(message);
+}
+
+function Ejericio13(){
+    var tipopago=$('#tipodepago').val();
+    var montoPagar=parseFloat($('#montoPagar').val());
+    var descuento=0.04;
+    var total=0;
+    var montoInferior=10000;
+    var message="";
+   
+    if((tipopago=='2' || tipopago=='3') &&(montoPagar < montoInferior)){
+        var descuento=montoPagar * descuento;
+        total=montoPagar - descuento;
+        message="<div> Total:"+ montoPagar +"<br>Descuento:"+ descuento +"<br>Total a Pagar:"+ total +"</div>"
+    }else{
+       message="Total:"+  montoPagar;
+    }
+    
+    $('#totalPagar').html(message);
+}
+
+function Ejercicio14(){
+    //var temperatura=parseInt();
 }
 
 
