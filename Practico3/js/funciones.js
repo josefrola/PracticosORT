@@ -28,6 +28,14 @@ function CargarTodo() {
     $('#btnForEjericiocio7').click(Ejercicio7for);
     $('#btnwhileEjericiocio7').click(Ejercicio7While);
     $('#btndoEjericiocio7').click(Ejjericicio7Do);
+
+
+    $('#btnMostrarEjercicio8').click(Ejercicio8For);
+    $('#btnMostrarEjercicio8while').click(Ejercicio8While);
+    $('#btnMostrarEjericio8do').click(Ejericio8do);
+
+    $('#btnEjercicio9while').click(Ejericio9While);
+    $('#btnEjercicio9do').click(Ejercicio10Do);
 }
 
 /*----------------------------ejercicio 2 ------------------------------*/
@@ -254,36 +262,123 @@ function Ejercicio7While() {
 
         resultado = parseInt(i % 4);
         if (resultado === 0) {
-           NumeroMultiple +="Numero:" + i + "<br>"; 
+            NumeroMultiple += "Numero:" + i + "<br>";
         }
-        
+
         i++;
     }
-    
+
     $('#divNumeroswhile').html(NumeroMultiple);
 }
 
-function Ejjericicio7Do(){
-   var NumeroMultiple = "";
+function Ejjericicio7Do() {
+    var NumeroMultiple = "";
     var resultado = 0;
     var i = -33;
-    
-    do{
-        resultado=parseInt(i % 4);
-        
-        if(resultado===0){
-            NumeroMultiple +="Numero:" + i +"<br>";
+
+    do {
+        resultado = parseInt(i % 4);
+
+        if (resultado === 0) {
+            NumeroMultiple += "Numero:" + i + "<br>";
         }
         i++;
-        
-    }while(i <= 230);
-    
+
+    } while (i <= 230);
+
     $('#divNumerosdo').html(NumeroMultiple);
 }
 
 /*---------------------------- Ejercicio 7----------------------------------------*/
 
+/*---------------------------- Ejercicio 8----------------------------------------*/
+function Ejercicio8For() {
+    var numero = parseInt($('#txtNumero').val());
+    var guiones = "-";
+    var message = "";
+    for (var i = 1; i <= numero; i++) {
+        message += guiones;
+    }
 
+    $('#divDatos').html(message);
+}
 
+function Ejercicio8While() {
+    var numero = parseInt($('#txtNumero').val());
+    var guiones = "-";
+    var message = "";
+    var i = 1;
 
+    while (i <= numero) {
+        message += guiones;
+
+        i++;
+    }
+    $('#divDatos_1').html(message);
+}
+
+function Ejericio8do() {
+    var numero = parseInt($('#txtNumero').val());
+    var guiones = "-";
+    var message = "";
+    var i = 1;
+
+    do {
+        message += guiones;
+        i++;
+    } while (i <= numero);
+
+    $('#divDatos_2').html(message);
+}
+/*---------------------------- Fin Ejercicio 8-------------------------------------*/
+
+/*-----------------------------Ejercicio 9 ----------------------------------------*/
+function Ejericio9While() {
+    var numero1 = parseInt($('#txtNumero1').val());
+    var numero2 = parseInt($('#txtNumero2').val());
+    var numeroMostrar = "";
+    var num_1 = 0;
+    var num_2 = 0;
+
+    if (numero1 >= numero2) {
+        num_1 = numero2;
+        num_2 = numero1;
+    } else {
+        num_1 = numero1;
+        num_2 = numero2;
+    }
+
+    while (num_1 <= num_2) {
+        numeroMostrar += "Numero:" + num_1 + "<br>";
+
+        num_1++;
+    }
+
+    $('#divMostrarwhile').html(numeroMostrar);
+}
+
+function Ejercicio10Do() {
+    var numero1 = parseInt($('#txtNumero1').val());
+    var numero2 = parseInt($('#txtNumero2').val());
+    var numeroMostrar = "";
+    var num_1 = 0;
+    var num_2 = 0;
+
+    if (numero1 >= numero2) {
+        num_1 = numero2;
+        num_2 = numero1;
+    } else {
+        num_1 = numero1;
+        num_2 = numero2;
+    }
+
+    do {
+        numeroMostrar += "Numero:" + num_1 + "<br>";
+        num_1++;
+    } while (num_1 <= num_2);
+
+     $('#divMostrardo').html(numeroMostrar);
+}
+
+/*-----------------------------Fin Ejercicio 9 ----------------------------------------*/
 
